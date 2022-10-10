@@ -5,7 +5,7 @@ import Topic from '../Topic/Topic';
 const Topics = () => {
     const topicsLoad = useLoaderData()
     const topics = topicsLoad.data
-    console.log(topics);
+    // console.log(topics);
     return (
         <div className='grid lg:grid-cols-4 gap-5 px-4 lg:px-40'>
             {

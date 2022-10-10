@@ -17,13 +17,17 @@ function App() {
       {path:'/topics' ,
       loader: ()=> fetch("https://openapi.programming-hero.com/api/quiz"),
       element:<Topics></Topics>},
-      {path:'quiz/:quizId', element:<Quiz></Quiz> },
+      {path:'quiz/:quizId',
+      loader: ({params})=>{
+        return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+      },
+      element:<Quiz></Quiz> },
       {path:'/statistics' ,element:<h1>statistics page comming soon</h1>},
       {path:'/blog' ,element:<h1>blog page comming soon</h1>}
     ]}
   ])
   return (
-    <div className="App">
+    <div >
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
