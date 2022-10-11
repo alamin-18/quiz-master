@@ -9,8 +9,8 @@ const Questions = ({quiz}) => {
 // console.log(options);
 const correctanswer = () => {
     toast.success('🦄 Wow your is correct!', {
-        position: "top-center",
-        autoClose: 5000,
+        position: "top-right",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -21,8 +21,8 @@ const correctanswer = () => {
 }
 const Wronganswer = () =>{
     toast.warn('🦄 Wow so easy!', {
-        position: "top-center",
-        autoClose: 5000,
+        position: "top-right",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -52,7 +52,19 @@ const Wronganswer = () =>{
                 </div>)
                 }
             </div>
-        <ToastContainer></ToastContainer>
+            <ToastContainer
+position="top-right"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
+        
         </div>
     );
 };
