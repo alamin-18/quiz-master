@@ -1,11 +1,12 @@
 import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
  
 const Questions = ({quiz}) => {
     const {question,options,correctAnswer} =quiz
 
 // console.log(options);
+// const notify = () => toast("Wow so easy!");
 const correctanswer = () => {
     toast.success('Wow your is correct!', {
         position: "top-right",
@@ -46,6 +47,7 @@ const Wronganswer = () =>{
     const quizHandle = (option)=>{
         if(option === correctAnswer){
             correctanswer()
+            // notify()
         }
         else{
             Wronganswer()
@@ -53,6 +55,7 @@ const Wronganswer = () =>{
     }
     return (
         <div className=''>
+            <ToastContainer></ToastContainer>
             <h1 className='text-3xl font-semibold mt-6 mb-6'> {question}</h1>
             <button onClick={seeanswer}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"       fill="currentColor" className="w-6 h-6">
                         <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
@@ -67,18 +70,6 @@ const Wronganswer = () =>{
                 </div>)
                 }
             </div>
-            <ToastContainer
-                position="fixe"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={true}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                />
         
         </div>
     );
