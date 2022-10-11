@@ -1,17 +1,44 @@
 import React from 'react';
 import Options from '../Options/Options';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Questions = ({quiz}) => {
-    const {question,options,id,correctAnswer} =quiz
+    const {question,options,correctAnswer} =quiz
 
 // console.log(options);
-    // console.log(quiz);
+const correctanswer = () => {
+    toast.success('🦄 Wow your is correct!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
+const Wronganswer = () =>{
+    toast.warn('🦄 Wow so easy!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
+    
     const quizHandle = (option)=>{
         if(option === correctAnswer){
-            console.log("tik hoyche re");
+            correctanswer()
         }
         else{
-            console.log("vul hoyche re")
+            Wronganswer()
+            console.log("hoynai");
         }
     }
     return (
@@ -20,15 +47,12 @@ const Questions = ({quiz}) => {
             <div className='grid lg:grid-cols-2 gap-6 '> 
                 {
                     options.map((option,index) =><div onClick={()=>quizHandle(option)} className='border border-violet-600 text-xl py-6 px-2 flex gap-4 justify-center items-center'>
-                    <input type="radio" id={id} name='option' />
-                    <label htmlFor={id}>{option}</label>
+                    <input type="radio"  name='option' />
+                    <label >{option}</label>
                 </div>)
                 }
-                {/* <div className='border border-violet-600 text-xl py-6 px-2 flex gap-4 justify-center items-center'>
-            <input type="radio" />
-            <label htmlFor="">{options}</label>
-        </div> */}
             </div>
+        <ToastContainer></ToastContainer>
         </div>
     );
 };
