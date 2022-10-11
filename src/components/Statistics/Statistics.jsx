@@ -15,6 +15,7 @@ const Statistics = () => {
     const data = dataLoad.data
     console.log(data);
     return (
+      <div className='mt-20 flex justify-center '>
         <BarChart
       width={500}
       height={300}
@@ -34,6 +35,7 @@ const Statistics = () => {
       <Bar dataKey="total" fill="#8884d8" />
       <Bar dataKey="id" fill="#82ca9d" />
     </BarChart>
+    </div>
     );
 };
 
