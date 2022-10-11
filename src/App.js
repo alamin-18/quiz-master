@@ -7,6 +7,7 @@ import Topics from './components/Topics/Topics';
 import Quiz from './components/Quiz/Quiz';
 import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
+import EroowPage from './components/ErrowPage/EroowPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -28,7 +29,9 @@ function App() {
       loader: ()=> fetch(" https://openapi.programming-hero.com/api/quiz"),
       element:<Statistics></Statistics>},
       {path:'/blog' ,element:<Blog></Blog>}
-    ]}
+    ]},
+    {path:'*',element:<EroowPage></EroowPage>}
+
   ])
   return (
     <div >
