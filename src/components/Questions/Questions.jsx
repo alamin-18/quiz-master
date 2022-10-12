@@ -2,6 +2,7 @@ import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer,toast } from 'react-toastify';
  
+
 const Questions = ({quiz}) => {
     const {question,options,correctAnswer} =quiz
 
@@ -54,8 +55,9 @@ const Wronganswer = () =>{
         }
     }
     return (
-        <div className=''>
-            <ToastContainer></ToastContainer>
+        
+        <div>
+            <div>
             <h1 className='text-3xl font-semibold mt-6 mb-6'> {question}</h1>
             <button onClick={seeanswer}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"       fill="currentColor" className="w-6 h-6">
                         <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
@@ -65,12 +67,13 @@ const Wronganswer = () =>{
             </button>
             <div className='grid lg:grid-cols-2 gap-6 '> 
                 {
-                    options.map((option) =><div  className='border border-violet-600 text-xl py-6 px-2 flex gap-4 justify-center items-center'>
+                    options.map((option,index) =><div key={index}  className='border border-violet-600 text-xl py-6 px-2 flex gap-4 justify-center items-center'>
                     <label ><input onClick={()=>quizHandle(option)} type="radio"  name='option' /> {option}</label>
                 </div>)
                 }
             </div>
-        
+            </div>
+                <ToastContainer></ToastContainer>
         </div>
     );
 };
