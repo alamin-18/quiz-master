@@ -6,6 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Features
+
+- This is quiz website 
+- use react router
+- Tailwind css,and daisyUI components library
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
