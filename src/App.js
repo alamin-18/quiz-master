@@ -11,6 +11,7 @@ import EroowPage from './components/ErrowPage/EroowPage';
 function App() {
   const router = createBrowserRouter([
     {path:'/', element:<Main></Main>,
+    errorElement:<EroowPage></EroowPage>,
     children:[
       
       {path:'/' ,
@@ -29,7 +30,7 @@ function App() {
       element:<Statistics></Statistics>},
       {path:'/blog' ,element:<Blog></Blog>}
     ]},
-    {path:'*',element:<EroowPage></EroowPage>}
+    
 
   ])
   return (
